@@ -1,7 +1,8 @@
 .red_link {
     color: red;
 }
-body{
+
+body {
     margin-right: 0%;
     margin-left: 0%;
     margin-bottom: 0%;
@@ -9,21 +10,21 @@ body{
     width: 100%;
     height: 100%;
 }
-.headline{
-    background-image:url("../images/header.jpg");
+
+.headline {
+    background-image: url("../images/header.jpg");
     background-size: cover;
-    width: 100%;
-    height: 10%;
+    width: auto;
+    height: 200pt;
 }
-.leftmenu{
-    height: 5%;
-    text-align: center;
-    margin-right: 0%;
-    margin-left: 0%;
-    margin-bottom: 0%;
-    margin-top: 0%;
+
+.topmenu {
+    height: 80pt;
+    margin-right: 60pt;
+    margin-top: 30pt
 }
-.mainblock{
+
+.mainblock {
     width: 100%;
     height: 90%;
     text-align: left;
@@ -32,6 +33,7 @@ body{
     margin-bottom: 0%;
     margin-top: 0%;
 }
-html{
+
+html {
     width: 100%;
 }

@@ -13,8 +13,7 @@
 </head>
 <body>
 <div align="center">
-    <#include "head.ftl" />
-    <#include "leftmenu.ftl"/>
+    <#include "template/components/header.ftl" />
 </div>
 <br>
 <div id="container">
