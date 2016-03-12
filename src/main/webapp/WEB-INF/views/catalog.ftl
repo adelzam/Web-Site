@@ -6,9 +6,9 @@
     <title>Catalog</title>
 </head>
 <body class="body">
-<div> <#include "head.ftl"></div>
+<div> <#include "template/components/headerTop.ftl"></div>
 <div class="mainblock">
-    <div class="leftmenu"> <#include "leftmenu.ftl"></div>
+    <div class="leftmenu"> <#include "template/components/headerMenu.ftl"></div>
     <div align="left">
         Page = ${page}
         Limit = ${limit!"null"}

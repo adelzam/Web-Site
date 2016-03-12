@@ -5,9 +5,8 @@
     <title>Главная страница каталога</title>
 </head>
 <body class="body">
-<div><#include "head.ftl"></div>
 <div class="mainblock">
-    <div class="leftmenu"> <#include "leftmenu.ftl"></div>
+    <div class="leftmenu"> <#include "template/components/headerMenu.ftl"></div>
     <div align="left">
     ${message!"Сообщения нет!"}
     </div>
