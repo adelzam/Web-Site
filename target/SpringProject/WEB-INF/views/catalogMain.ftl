@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная страница каталога</title>
-</head>
-<body class="body">
-<div><#include "template/components/headerTop.ftl"></div>
+<#include "mainTemplate.ftl">
+<@mainTemplate title="Каталог товаров" styles=["css/style.css"] scripts=["js/script.js"]/>
+<#macro m_body>
 <div class="mainblock">
-    <div class="leftmenu"> <#include "template/components/headerMenu.ftl"></div>
     <div align="left">
     ${message!"Сообщения нет!"}
     </div>
 </div>
-</body>
-</html>
+</#macro>

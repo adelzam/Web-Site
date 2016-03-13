@@ -1,14 +1,20 @@
 <#include "mainTemplate.ftl">
-<@mainTemplate title="Главная" styles=["css/style.css"] scripts=["js/script.js"]/>
+<@mainTemplate title="Главная" styles=["css/style.css"] scripts=["js/jquery.cycle.all.min.js","js/script.js"]/>
 <#macro m_body>
-<h2>${message}</h2>
-
-<a href="/catalog">Главная страница каталога</a><br><br>
-
-Catalog page 1 : <a href="/catalog/1" class="red_link">link</a><br>
-Catalog page 2 : <a href="/catalog/2?page=3&limit=4" class="red_link">link</a><br><br>
-
-<button onclick="func()">Клик</button><br><br>
-
-<a href="/test/freemarker">FreeMarker Test</a>
+<div class="slider">
+    <img src="../../resources/images/coffe2.jpg">
+    <img src="../../resources/images/coffe1.jpg">
+    <img src="../../resources/images/coffe3.jpg">
+</div>
+<div style="margin-left: 135pt">
+    <div class="goodblock">а</div>
+    <div class="goodblock">а</div>
+    <div class="goodblock">а</div>
+</div>
+<div style="margin-left: 135pt">
+    <div class="goodblock">апрро</div>
+    <div class="goodblock">уапп</div>
+    <div class="goodblock">уква</div>
+</div>
+Конец строки
 </#macro>

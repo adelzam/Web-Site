@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Корзина</title>
-</head>
-<body class="body">
-<div> <#include "template/components/headerTop.ftl" ></div>
-<div class="mainblock">
-    <div class="leftmenu"> <#include "template/components/headerMenu.ftl"></div>
-    <div align="left">
-        <br>
+<#include "mainTemplate.ftl">
+<@mainTemplate title="Главная" styles=["css/style.css"] scripts=["js/script.js"]/>
+<#macro m_body>
         Товары в корзине:
     <#list (Session.sessionCart![]) as good>
         <#if !limit?? || good_index < limit>
@@ -22,7 +13,4 @@
         </pre>
         </#if>
     </#list>
-    </div>
-</div>
-</body>
-</html>
+</#macro>
