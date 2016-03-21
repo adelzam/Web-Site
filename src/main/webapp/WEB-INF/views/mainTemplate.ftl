@@ -3,7 +3,7 @@
 <html lang="ru">
 <head>
     <!-- подключение библиотеки jQuery -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="../../resources/js/jquery-2.2.2.min.js"></script>
     <meta charset="UTF-8">
     <title>${title}</title>
     <#list styles as css>
@@ -17,8 +17,10 @@
 <div align="center">
     <#include "template/components/header.ftl" />
 </div>
-<div id="container" align="center">
-    <@m_body/>
+<div>
+    <div id="container" align="center">
+        <@m_body/>
+    </div>
 </div>
 </body>
 </html>
