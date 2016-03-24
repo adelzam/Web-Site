@@ -1,0 +1,78 @@
+.red_link {
+    color: red;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider img {
+    width: 750pt;
+    display: block;
+}
+.contact_form h2{
+    font-size: 2em;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    text-align:center;
+    margin:2em 0 1em 0;
+}
+.col-md-6.to, .col-md-6.text{
+    padding: 0;
+}
+.but__center {
+    text-align: center;
+    margin:2em 0;
+}
+.but__center input[type="submit"] {
+    background:none;
+    display: inline-block;
+    color:#ECCAAD;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-weight:600;
+}
+.but__center input[type="submit"]:hover{
+    color:#000;
+}
+.headline {
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    width: auto;
+    height: 200pt;
+}
+
+.topmenu {
+    height: 80pt;
+    margin-right: 60pt;
+    margin-top: 30pt;
+    position: static;
+}
+
+.goodblock {
+    width: 210pt;
+    height: 300pt;
+    margin-left: 45pt;
+    margin-top: 40pt;
+    float: left
+}
+
+body {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+    margin-left: 0pt;
+    margin-right: 0pt;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/medium_vyprchka_all.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 0pt;
+}
