@@ -1,5 +1,6 @@
 package com.springapp.mvc.services;
 
+import com.springapp.mvc.common.CategoryInfo;
 import com.springapp.mvc.common.GoodInfo;
 import org.springframework.stereotype.Service;
 
@@ -24,14 +25,14 @@ public class CatalogService {
      */
     public List<GoodInfo> getGoodsByCategoryId(Long categoryId) {
         List<GoodInfo> goods = new ArrayList<GoodInfo>();
-        goods.add(new GoodInfo(1L, "Медведь", categoryId, new BigDecimal(100)));
-        goods.add(new GoodInfo(2L, "Кукла 1", categoryId, new BigDecimal(200)));
-        goods.add(new GoodInfo(3L, "Кукла 2", categoryId, new BigDecimal(200)));
-        goods.add(new GoodInfo(4L, "Кукла 3", categoryId, new BigDecimal(200)));
-        goods.add(new GoodInfo(5L, "Кукла 4", categoryId, new BigDecimal(200)));
-        goods.add(new GoodInfo(6L, "Автомобиль Audi", categoryId, new BigDecimal(500)));
-        goods.add(new GoodInfo(7L, "Автомобиль BMW", categoryId, new BigDecimal(500)));
-        goods.add(new GoodInfo(8L, "Автомобиль Lada", categoryId, new BigDecimal(200)));
+        goods.add(new GoodInfo(1L, "Медведь", new CategoryInfo(1L, "name", null), new BigDecimal(100)));
+        goods.add(new GoodInfo(2L, "Кукла 1", new CategoryInfo(1L, "name", null), new BigDecimal(200)));
+        goods.add(new GoodInfo(3L, "Кукла 2",new CategoryInfo(1L, "name", null), new BigDecimal(200)));
+        goods.add(new GoodInfo(4L, "Кукла 3", new CategoryInfo(1L, "name", null), new BigDecimal(200)));
+        goods.add(new GoodInfo(5L, "Кукла 4", new CategoryInfo(1L, "name", null), new BigDecimal(200)));
+        goods.add(new GoodInfo(6L, "Автомобиль Audi", new CategoryInfo(1L, "name", null), new BigDecimal(500)));
+        goods.add(new GoodInfo(7L, "Автомобиль BMW", new CategoryInfo(1L, "name", null), new BigDecimal(500)));
+        goods.add(new GoodInfo(8L, "Автомобиль Lada",new CategoryInfo(1L, "name", null), new BigDecimal(200)));
         return goods;
     }
 }

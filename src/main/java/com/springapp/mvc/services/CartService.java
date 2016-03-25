@@ -29,4 +29,5 @@ public class CartService {
         request.getSession().setAttribute("sum", sum.add(goodInfo.getPrice().setScale(2)));
         return cart;
     }
+
 }

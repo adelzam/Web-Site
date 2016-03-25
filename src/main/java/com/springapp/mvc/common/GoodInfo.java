@@ -40,8 +40,8 @@ public class GoodInfo {
     /**
      * Цена товара
      */
-    @Column(name = "prise")
-    private BigDecimal prise;
+    @Column(name = "price")
+    private BigDecimal price;
 
     /**
      * id категории товара
@@ -68,28 +68,35 @@ public class GoodInfo {
     public GoodInfo() {
     }
 
-    public GoodInfo(String name, String brand, String country, BigDecimal prise, CategoryInfo category) {
+    public GoodInfo(String name, String brand, String country, BigDecimal price, CategoryInfo category) {
         this.name = name;
         this.brand = brand;
         this.country = country;
-        this.prise = prise;
+        this.price = price;
         this.category = category;
     }
 
-    public GoodInfo(String name, String brand, String country, BigDecimal prise, CategoryInfo category, String imageURL) {
+    public GoodInfo(Long id, String name, CategoryInfo category, BigDecimal price) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+    }
+
+    public GoodInfo(String name, String brand, String country, BigDecimal price, CategoryInfo category, String imageURL) {
         this.name = name;
         this.brand = brand;
         this.country = country;
-        this.prise = prise;
+        this.price = price;
         this.category = category;
         this.imageURL = imageURL;
     }
 
-    public GoodInfo(String name, String brand, String country, BigDecimal prise, CategoryInfo category, String imageURL, String description) {
+    public GoodInfo(String name, String brand, String country, BigDecimal price, CategoryInfo category, String imageURL, String description) {
         this.name = name;
         this.brand = brand;
         this.country = country;
-        this.prise = prise;
+        this.price = price;
         this.category = category;
         this.imageURL = imageURL;
         this.description = description;
@@ -127,12 +134,12 @@ public class GoodInfo {
         this.country = country;
     }
 
-    public BigDecimal getPrise() {
-        return prise;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setPrise(BigDecimal prise) {
-        this.prise = prise;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public CategoryInfo getCategory() {
@@ -158,4 +165,5 @@ public class GoodInfo {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }
