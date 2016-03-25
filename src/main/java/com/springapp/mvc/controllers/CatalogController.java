@@ -43,7 +43,7 @@ public class CatalogController {
         model.addAttribute("goods", goods);
         model.addAttribute("page", page);
         model.addAttribute("limit", limit);
-        return "catalog";
+        return "catalog/catalog";
     }
 
     /**
@@ -52,6 +52,6 @@ public class CatalogController {
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
     public String mainCatalog(HttpServletRequest request) {
         request.setAttribute("message", "Главная страница каталога");
-        return "catalogMain";
+        return "catalog/catalogMain";
     }
 }

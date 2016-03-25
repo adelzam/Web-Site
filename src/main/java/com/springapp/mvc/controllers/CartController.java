@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.List;
 
 /**
  * Created by adelzamalutdinov on 24.02.16.
@@ -35,6 +33,6 @@ public class CartController {
     }
     @RequestMapping(method = RequestMethod.GET)
     public String renderCart() {
-        return "cartMain";
+        return "cart/cartMain";
     }
 }

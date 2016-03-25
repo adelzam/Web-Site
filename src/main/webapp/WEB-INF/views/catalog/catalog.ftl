@@ -1,5 +1,5 @@
 <#-- @ftlvariable name="goods" type="java.util.List<com.springapp.mvc.common.GoodInfo>" -->
-<#include "template/mainTemplate.ftl">
+<#include "../template/mainTemplate.ftl">
 <@mainTemplate title="Каталог товаров" styles=["css/style.css"] scripts=["js/script.js"]/>
 <#macro m_body>
 <div align="left">
