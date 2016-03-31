@@ -26,18 +26,18 @@
             <version>1.4</version>
         </dependency>
         <!-- H2 -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.181</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.h2database</groupId>-->
+            <!--<artifactId>h2</artifactId>-->
+            <!--<version>1.4.181</version>-->
+        <!--</dependency>-->
 
         <!-- Postgres -->
-        <!--<dependency>-->
-        <!--<groupId>postgresql</groupId>-->
-        <!--<artifactId>postgresql</artifactId>-->
-        <!--<version>9.1-901-1.jdbc4</version>-->
-        <!--</dependency>-->
+        <dependency>
+        <groupId>postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>9.1-901-1.jdbc4</version>
+        </dependency>
 
         <!-- Object-Relational Mapping -->
         <dependency>
@@ -72,5 +72,12 @@
             <artifactId>javassist</artifactId>
             <version>3.18.1-GA</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.9.4.RELEASE</version>
+        </dependency>
     </dependencies>
+
 </project>

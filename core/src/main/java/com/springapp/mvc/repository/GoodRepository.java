@@ -2,23 +2,15 @@ package com.springapp.mvc.repository;
 
 import com.springapp.mvc.common.CategoryInfo;
 import com.springapp.mvc.common.GoodInfo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
 /**
  * Created by adelzamalutdinov on 25.03.16.
  */
-public interface GoodRepository {
+public interface GoodRepository extends JpaRepository<GoodInfo, Long> {
 
-    void addGood(GoodInfo goodInfo);
+    List<GoodInfo> findGoodsByCategoryID(Long categoryID);
 
-    void updateGood(GoodInfo goodInfo);
-
-    void deleteGood(Long goodId);
-
-    Object getGoodById(Long goodId);
-
-    List<GoodInfo> getGoodsByCategory(CategoryInfo categoryInfo);
-
-    List<GoodInfo> getAllGood();
 }
