@@ -43,16 +43,16 @@ body {
 .but__center input[type="submit"] {
     background: none;
     display: inline-block;
-    color: #ECCAAD;
+    color: midnightblue;
     text-transform: uppercase;
-    font-size: 1.2em;
+    font-size: 0.9em;
     transition: 0.5s ease;
     -o-transition: 0.5s ease;
     -webkit-transition: 0.5s ease;
     border: none;
     cursor: pointer;
     outline: none;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .but__center input[type="submit"]:hover {
@@ -92,4 +92,49 @@ body {
     background-size: cover;
     background-attachment: fixed;
     margin-top: 0pt;
+}
+
+span {
+    letter-spacing: 5px;
+}
+
+.form_error {
+    font-size: 18px;
+    letter-spacing: normal;
+    color: red;
+}
+
+.feedback_input_form {
+    width: 610px;
+    height: 43px;
+    font-size: 32px;
+}
+
+.feedback_div {
+    width: 640px;
+}
+
+.feedback_main {
+    background-color: rgba(255, 245, 238, 0.5);
+    margin-left: 100pt;
+    margin-right: 100pt;
+    margin-top: 30pt;
+    font-size: 32px;
+    font-family: 'Kozuka Mincho Pro';
+    font-weight: 100;
+}
+
+.catalog_blog {
+    background-color: rgba(255, 245, 238, 0.4);
+    margin-left: 35pt;
+    margin-right: 35pt;
+}
+.rollover {
+    background: url("../../resources/images/buyButton.png"); /* Путь к файлу с исходным  рисунком */
+    display: block; /* Рисунок как блочный элемент */
+    width: 247px; /* Ширина рисунка в пикселах */
+    height: 70px; /* Высота рисунка */
+}
+.rollover:hover {
+    background-position: 0 -70px; /* Смещение фона */
 }

@@ -12,6 +12,7 @@ import java.util.List;
  */
 @Service
 public class GoodService {
+    private CatalogService catalogService;
 
     public GoodInfo getGoodById(Long id) {
         return new GoodInfo(id, "новая игрушка", new CategoryInfo(1L, "name", null), new BigDecimal(199));
@@ -19,6 +20,6 @@ public class GoodService {
 
     public List<GoodInfo> getAllGoods() {
         //FIXME Add connection with database and read all goods from it
-        return null;
+        return catalogService.getGoodsByCategoryId(1L);
     }
 }

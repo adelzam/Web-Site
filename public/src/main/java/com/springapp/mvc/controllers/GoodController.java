@@ -29,6 +29,6 @@ public class GoodController {
     public String renderAllGoods(ModelMap  model) {
         List<GoodInfo> goods = goodService.getAllGoods();
         model.addAttribute("goods", goods);
-        return "good/allGoodsPage";
+        return "redirect:/catalog";
     }
 }

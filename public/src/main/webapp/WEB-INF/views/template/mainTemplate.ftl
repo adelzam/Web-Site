@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- подключение библиотеки jQuery -->
-    <script src="../../resources/js/jquery-2.2.2.min.js"></script>
     <meta charset="UTF-8">
     <title>${title}</title>
     <#list styles as css>
