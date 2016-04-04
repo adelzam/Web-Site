@@ -20,7 +20,6 @@
         <logout logout-url="/logout"
                 logout-success-url="/"
                 invalidate-session="true" />
-        <intercept-url pattern="/**" access="ROLE_SPITTER" />
         <!-- Задаем шаблоны url адресов доступ к которым ограничен, указываем необходимые права доступа -->
         <intercept-url pattern="/cabinet**" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')"/>

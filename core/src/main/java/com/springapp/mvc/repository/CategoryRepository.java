@@ -10,5 +10,10 @@ import java.util.List;
  */
 public interface CategoryRepository extends JpaRepository<CategoryInfo, Long> {
 
+    /**
+     *
+     * @param parent_id
+     * @return list of subcategories by parent
+     */
     List<CategoryInfo> findCategoriesByParent(Long parent_id);
 }
