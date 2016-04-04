@@ -28,7 +28,7 @@ public class CatalogService {
     @Autowired
     private GoodRepository goodRepository;
 
-    public List<GoodInfo> getGoodsByCategoryId(Long categoryId) {
+    public List<GoodInfo> getGoodsByCategoryId(Long category_id) {
 //        List<GoodInfo> goods = new ArrayList<GoodInfo>();
 //        goods = goodRepository.getGoodsByCategory(catalogRepository.getCategoryById(categoryId));
 //        goods.add(new GoodInfo(1L, "Медведь", new CategoryInfo(1L, "name", null), new BigDecimal(100)));
@@ -39,6 +39,6 @@ public class CatalogService {
 //        goods.add(new GoodInfo(6L, "Автомобиль Audi", new CategoryInfo(1L, "name", null), new BigDecimal(500)));
 //        goods.add(new GoodInfo(7L, "Автомобиль BMW", new CategoryInfo(1L, "name", null), new BigDecimal(500)));
 //        goods.add(new GoodInfo(8L, "Автомобиль Lada",new CategoryInfo(1L, "name", null), new BigDecimal(200)));
-        return goodRepository.findGoodsByCategoryID(categoryId);
+        return goodRepository.findGoodsByCategory(category_id);
     }
 }

@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface GoodRepository extends JpaRepository<GoodInfo, Long> {
 
-    List<GoodInfo> findGoodsByCategoryID(Long categoryID);
+    List<GoodInfo> findGoodsByCategory(Long category_id);
 
 }
