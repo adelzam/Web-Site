@@ -36,4 +36,9 @@ public class CartController {
         if (cartService.emptyCart(request)) return "cart/emptyCart";
         return "cart/cartMain";
     }
+    @RequestMapping(value = "/remote/{index}", method = {RequestMethod.GET})
+    public String remoteFromCart(@PathVariable("index") Integer index) {
+        cartService.remoteFromCart(index, request);
+        return "redirect:/cart";
+    }
 }

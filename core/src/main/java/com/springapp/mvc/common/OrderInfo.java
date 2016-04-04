@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by adelzamalutdinov on 25.03.16.
  */
 @Entity
-@Table(schema = "orders")
+@Table(schema = "h_order")
 public class OrderInfo {
 
     /**
@@ -16,6 +16,26 @@ public class OrderInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "message")
+    private  String message;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserInfo userInfo;
+
 
     /**
      * creation date
@@ -26,12 +46,70 @@ public class OrderInfo {
     public OrderInfo() {
     }
 
+    public OrderInfo(String name, String address, String email, String phone, String message, UserInfo userInfo, Date creationDate) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.message = message;
+        this.userInfo = userInfo;
+        this.creationDate = creationDate;
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 
     public Date getCreationDate() {

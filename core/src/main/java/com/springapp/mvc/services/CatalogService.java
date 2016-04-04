@@ -39,6 +39,6 @@ public class CatalogService {
 //        goods.add(new GoodInfo(6L, "Автомобиль Audi", new CategoryInfo(1L, "name", null), new BigDecimal(500)));
 //        goods.add(new GoodInfo(7L, "Автомобиль BMW", new CategoryInfo(1L, "name", null), new BigDecimal(500)));
 //        goods.add(new GoodInfo(8L, "Автомобиль Lada",new CategoryInfo(1L, "name", null), new BigDecimal(200)));
-        return goodRepository.findGoodsByCategory(category_id);
+        return goodRepository.findGoodsByCategoryId(category_id);
     }
 }

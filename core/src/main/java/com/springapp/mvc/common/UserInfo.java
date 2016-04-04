@@ -1,6 +1,7 @@
 package com.springapp.mvc.common;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Gataullin Kamil
@@ -44,7 +45,20 @@ public class UserInfo {
      */
     private Boolean enabled;
 
+    @OneToMany(mappedBy = "userInfo")
+    private List<OrderInfo> orders ;
+
     public UserInfo() {
+    }
+
+    public UserInfo(String fio, String login, String hashPassword, String role, String key, Boolean enabled, List<OrderInfo> orders) {
+        this.fio = fio;
+        this.login = login;
+        this.hashPassword = hashPassword;
+        this.role = role;
+        this.key = key;
+        this.enabled = enabled;
+        this.orders = orders;
     }
 
     public Long getId() {
@@ -101,5 +115,13 @@ public class UserInfo {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public List<OrderInfo> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<OrderInfo> orders) {
+        this.orders = orders;
     }
 }

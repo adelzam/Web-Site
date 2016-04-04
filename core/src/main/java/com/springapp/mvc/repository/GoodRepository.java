@@ -16,6 +16,6 @@ public interface GoodRepository extends JpaRepository<GoodInfo, Long> {
      * @return list of goods by category
      */
 
-    List<GoodInfo> findGoodsByCategory(Long category_id);
+    List<GoodInfo> findGoodsByCategoryId(Long category_id);
 
 }

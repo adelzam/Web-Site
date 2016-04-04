@@ -34,5 +34,14 @@ public class CartService {
         List<GoodInfo> cart = (List<GoodInfo>) request.getSession().getAttribute(CART);
         if ((cart==null)||(cart.size()==0)) return true; else return false;
     }
-
+    public List<GoodInfo> remoteFromCart(Integer index, HttpServletRequest request) {
+        List<GoodInfo> cart = (List<GoodInfo>) request.getSession().getAttribute(CART);
+        BigDecimal sum = (BigDecimal) request.getSession().getAttribute("sum");
+        GoodInfo good = cart.get(index);
+        request.getSession().setAttribute("sum", sum.subtract(good.getPrice().setScale(2)));
+        cart.remove(index.intValue());
+        request.getSession().setAttribute(CART,cart);
+        request.getSession().setAttribute("goodcount", (Integer) cart.size());
+        return cart;
+    }
 }
