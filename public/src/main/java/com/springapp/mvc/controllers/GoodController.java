@@ -21,6 +21,7 @@ public class GoodController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String renderGood(@PathVariable("id") Long id, ModelMap model) {
         GoodInfo good = goodService.getGoodById(id);
+        model.addAttribute("goodPath", goodService.makeGoodPath(good));
         model.addAttribute("good", good);
         return "good/goodPage";
 

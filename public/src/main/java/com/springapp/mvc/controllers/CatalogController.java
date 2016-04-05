@@ -2,6 +2,8 @@ package com.springapp.mvc.controllers;
 
 import com.springapp.mvc.common.GoodInfo;
 import com.springapp.mvc.services.CatalogService;
+import com.springapp.mvc.services.filters.GoodsFiltersServies;
+import com.springapp.mvc.utils.OrderTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Контроллер отвечающий за каталог
- *
- * Gataullin Kamil
- * 22.02.2016 22:46
+ * Controller for work with catalog
  */
 @Controller
 @RequestMapping("/catalog")
@@ -26,13 +25,16 @@ public class CatalogController {
     @Autowired
     private CatalogService catalogService;
 
+    @Autowired
+    private GoodsFiltersServies goodsFiltersServies;
+
     /**
-     * Отображение каталога
+     * Catalog view
      *
-     * @param id    id категории
-     * @param page  номер страницы
-     * @param limit кол-во товаров отображаемых на странице
-     * @return отображение каталога
+     * @param id    id of category
+     * @param page  page count
+     * @param limit count of goods in page view
+     * @return catalog view
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String renderCatalog(@PathVariable("id") Long id,
@@ -41,17 +43,26 @@ public class CatalogController {
                                 Model model) {
         List<GoodInfo> goods = catalogService.getGoodsByCategoryId(id);
         model.addAttribute("goods", goods);
-        model.addAttribute("page", page);
-        model.addAttribute("limit", limit);
+        model.addAttribute("category", goods.get(0).getCategory().getName());
         return "catalog/catalog";
     }
 
     /**
-     * Отображение главной страницы каталога
+     * view of main catalog page
      */
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
     public String mainCatalog(HttpServletRequest request) {
         request.setAttribute("message", "Главная страница каталога");
         return "catalog/catalogMain";
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, params = "order")
+    public String renderCatalogByOrder(@PathVariable("id") Long id,
+                                       @RequestParam("order") OrderTypes orderTypes,
+                                       Model model) {
+        List<GoodInfo> goods = goodsFiltersServies.orderBy(orderTypes, id);
+        model.addAttribute("goods", goods);
+        model.addAttribute("category", goods.get(0).getCategory().getName());
+        return "catalog/catalog";
     }
 }

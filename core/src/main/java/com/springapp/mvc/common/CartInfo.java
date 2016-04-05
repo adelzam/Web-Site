@@ -23,6 +23,15 @@ public class CartInfo {
     @Column(name = "number")
     private Integer number;
 
+    public CartInfo() {
+    }
+
+    public CartInfo(GoodInfo goodInfo, OrderInfo orderInfo, Integer number) {
+        this.goodInfo = goodInfo;
+        this.orderInfo = orderInfo;
+        this.number = number;
+    }
+
     public Long getId() {
         return id;
     }

@@ -25,17 +25,32 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
+    /**
+     * @param id
+     * @return page with cart after add new good to cart
+     * add new good to user's cart
+     */
     @RequestMapping(value = "/add/{id}", method = {RequestMethod.GET})
     public String addToCart(@PathVariable("id") Long id) {
         GoodInfo goodInfo = goodService.getGoodById(id);
         cartService.addInCart(goodInfo, request);
         return "redirect:/cart";
     }
+
+    /**
+     * @return page with message that cart is empty
+     */
     @RequestMapping(method = RequestMethod.GET)
     public String renderCart() {
         if (cartService.emptyCart(request)) return "cart/emptyCart";
         return "cart/cartMain";
     }
+
+    /**
+     * @param index
+     * @return page with cart after remote some good from cart
+     * remote user's cart after some action
+     */
     @RequestMapping(value = "/remote/{index}", method = {RequestMethod.GET})
     public String remoteFromCart(@PathVariable("index") Integer index) {
         cartService.remoteFromCart(index, request);

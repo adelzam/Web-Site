@@ -8,12 +8,12 @@
             <img src="../../../resources/images/Cat3.jpg" class="catalog_img" align="left">
         </div>
         <div  align="center" style="margin-left: 88pt">
-            <a href="/catalog/1"><img src="../../../resources/images/Cat2.jpg" class="catalog_img" align="left"></a>
-            <a href="/catalog/1"><img src="../../../resources/images/Cat4.png" class="catalog_img" align="left"></a>
+            <a href="/catalog/2"><img src="../../../resources/images/Cat2.jpg" class="catalog_img" align="left"></a>
+            <a href="/catalog/2"><img src="../../../resources/images/Cat4.png" class="catalog_img" align="left"></a>
         </div>
         <div  align="center" style="margin-left: 88pt">
-            <a href="/catalog/1"><img src="../../../resources/images/Cat1.jpg" class="catalog_img" align="left"></a>
-            <a href="/catalog/1"><img src="../../../resources/images/Cat5.png" class="catalog_img" align="left"></a>
+            <a href="/catalog/2"><img src="../../../resources/images/Cat1.jpg" class="catalog_img" align="left"></a>
+            <a href="/catalog/2"><img src="../../../resources/images/Cat5.png" class="catalog_img" align="left"></a>
         </div>
     </div>
     <#include "../template/components/topGoods.ftl" />

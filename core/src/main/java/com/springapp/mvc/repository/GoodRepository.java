@@ -18,4 +18,16 @@ public interface GoodRepository extends JpaRepository<GoodInfo, Long> {
 
     List<GoodInfo> findGoodsByCategoryId(Long category_id);
 
+    List<GoodInfo> findGoodsByCategoryIdOrderByPriceDesc(Long category_id);
+
+    List<GoodInfo> findGoodsByCategoryIdOrderByBrandDesc(Long category_id);
+
+    List<GoodInfo> findGoodsByCategoryIdOrderByNameDesc(Long category_id);
+
+    List<GoodInfo> findGoodsByCategoryIdOrderByBrandAsc(Long category_id);
+
+    List<GoodInfo> findGoodsByCategoryIdOrderByNameAsc(Long category_id);
+
+    List<GoodInfo> findGoodsByCategoryIdOrderByPriceAsc(Long category_id);
+
 }

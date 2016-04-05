@@ -36,6 +36,8 @@ public class OrderInfo {
     @JoinColumn(name = "user_id")
     private UserInfo userInfo;
 
+    @Column(name = "registered")
+    private Boolean registered;
 
     /**
      * creation date
@@ -46,14 +48,20 @@ public class OrderInfo {
     public OrderInfo() {
     }
 
-    public OrderInfo(String name, String address, String email, String phone, String message, UserInfo userInfo, Date creationDate) {
+    public OrderInfo(String name, String address, String email, String phone, String message, UserInfo userInfo, Boolean registered, Date creationDate) {
         this.name = name;
         this.address = address;
         this.email = email;
         this.phone = phone;
         this.message = message;
         this.userInfo = userInfo;
+        this.registered = registered;
         this.creationDate = creationDate;
+    }
+
+    public OrderInfo(String name, Boolean registered) {
+        this.name = name;
+        this.registered = registered;
     }
 
     public Long getId() {
@@ -114,6 +122,14 @@ public class OrderInfo {
 
     public Date getCreationDate() {
         return creationDate;
+    }
+
+    public Boolean getRegistered() {
+        return registered;
+    }
+
+    public void setRegistered(Boolean registered) {
+        this.registered = registered;
     }
 
     public void setCreationDate(Date creationDate) {

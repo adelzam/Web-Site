@@ -8,7 +8,7 @@
             <div style="display: inline-block; position: relative">
             <img src="../../../../resources/images/cart2.png"
                  style="width: 77pt;margin-top: 20pt; margin-left: -3pt">
-            <h3 style="display: block; position: absolute; color: white; margin-top: -32pt; margin-left: 5pt">${goodcount!"0"}: $${sum!"0.00"}</h3></div>
+            <h3 style="display: block; position: absolute; color: white; margin-top: -32pt; margin-left: 5pt">${goodcount!"0"}:${sum!"0.00"}&#8381 </h3></div>
 
     <#--<a style="color: aqua">В вашей корзине ${goodcount!"нет"} товаров</a>-->
     </div>

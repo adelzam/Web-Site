@@ -129,12 +129,20 @@ span {
     margin-left: 35pt;
     margin-right: 35pt;
 }
+
 .rollover {
     background: url("../../resources/images/buyButton.png"); /* Путь к файлу с исходным  рисунком */
     display: block; /* Рисунок как блочный элемент */
     width: 247px; /* Ширина рисунка в пикселах */
     height: 70px; /* Высота рисунка */
 }
+
 .rollover:hover {
     background-position: 0 -70px; /* Смещение фона */
+}
+
+.catalog_good_description {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Kozuka Gothic Pro';
 }
