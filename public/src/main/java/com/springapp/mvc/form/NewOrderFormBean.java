@@ -90,4 +90,15 @@ public class NewOrderFormBean {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    @Override
+    public String toString() {
+        return "NewOrderFormBean{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }

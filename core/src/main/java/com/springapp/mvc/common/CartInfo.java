@@ -39,4 +39,29 @@ public class CartInfo {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public GoodInfo getGoodInfo() {
+        return goodInfo;
+    }
+
+    public void setGoodInfo(GoodInfo goodInfo) {
+        this.goodInfo = goodInfo;
+    }
+
+    public OrderInfo getOrderInfo() {
+        return orderInfo;
+    }
+
+    public void setOrderInfo(OrderInfo orderInfo) {
+        this.orderInfo = orderInfo;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
 }

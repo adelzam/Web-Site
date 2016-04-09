@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @RequestMapping("/feedback")
 public class FeedbackController {
 
-    public static final String ATTR_FEEDBACK_FORM = "feedbackForm";
+    private static final String ATTR_FEEDBACK_FORM = "feedbackForm";
 
     @Autowired
     private HttpServletRequest request;

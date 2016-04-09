@@ -26,7 +26,7 @@
     <div style="font-size: 24px; float: left; margin-top: 30pt">
         <div style="color: darkslateblue; text-align: left">Дополнительная информация:</div>
         <div style="color: darkslateblue; text-align: left">Бренд производителя:</div>
-        <div style="font-size: 20pt; text-align: right">${good.brand!"-"}</div>
+        <div style="font-size: 20pt; text-align: right">${good.brand.name!"-"}</div>
         <div style="color: darkslateblue; text-align: left">Страна происхождения:</div>
         <div style="font-size: 20pt; text-align: right">${good.country!"-"}</div>
         <div style="color: darkslateblue; text-align: left"> Категория:</div>

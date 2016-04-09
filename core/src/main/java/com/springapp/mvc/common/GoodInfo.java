@@ -27,8 +27,10 @@ public class GoodInfo {
      * Бренд производителя
      */
 
-    @Column(name = "brand", length = 120, nullable = false)
-    private String brand;
+    @ManyToOne(cascade = {CascadeType.REFRESH},
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "brand_id")
+    private BrandInfo brand;
 
     /**
      * Страна происхождения товара
@@ -71,7 +73,7 @@ public class GoodInfo {
     public GoodInfo(Long id) {
         this.id = id;
     }
-    public GoodInfo(String name, String brand, String country, BigDecimal price, CategoryInfo category) {
+    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category) {
         this.name = name;
         this.brand = brand;
         this.country = country;
@@ -86,7 +88,7 @@ public class GoodInfo {
         this.price = price;
     }
 
-    public GoodInfo(String name, String brand, String country, BigDecimal price, CategoryInfo category, String imageURL) {
+    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, String imageURL) {
         this.name = name;
         this.brand = brand;
         this.country = country;
@@ -95,7 +97,7 @@ public class GoodInfo {
         this.imageURL = imageURL;
     }
 
-    public GoodInfo(String name, String brand, String country, BigDecimal price, CategoryInfo category, String imageURL, String description) {
+    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, String imageURL, String description) {
         this.name = name;
         this.brand = brand;
         this.country = country;
@@ -121,11 +123,11 @@ public class GoodInfo {
         this.name = name;
     }
 
-    public String getBrand() {
+    public BrandInfo getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(BrandInfo brand) {
         this.brand = brand;
     }
 

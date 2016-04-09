@@ -5,6 +5,7 @@ import com.springapp.mvc.services.CartService;
 import com.springapp.mvc.services.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,7 +32,7 @@ public class CartController {
      * add new good to user's cart
      */
     @RequestMapping(value = "/add/{id}", method = {RequestMethod.GET})
-    public String addToCart(@PathVariable("id") Long id) {
+    public String addToCart(@PathVariable("id") Long id, Model model) {
         GoodInfo goodInfo = goodService.getGoodById(id);
         cartService.addInCart(goodInfo, request);
         return "redirect:/cart";
@@ -56,4 +57,18 @@ public class CartController {
         cartService.remoteFromCart(index, request);
         return "redirect:/cart";
     }
+
+    @RequestMapping(value = "/remotegood/{index}", method = {RequestMethod.GET})
+    public String remoteOneGoodFromCart(@PathVariable("index") Integer index) {
+        cartService.remoteGood(index, request);
+        return "redirect:/cart";
+    }
+
+
+    @RequestMapping(value = "/clear", method = {RequestMethod.GET})
+    public String clearCart() {
+        cartService.clearCart(request);
+        return "redirect:/cart";
+    }
+
 }

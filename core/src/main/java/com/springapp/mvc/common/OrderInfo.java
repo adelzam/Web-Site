@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by adelzamalutdinov on 25.03.16.
  */
 @Entity
-@Table(schema = "h_order")
+@Table(name = "h_order")
 public class OrderInfo {
 
     /**
@@ -48,20 +48,26 @@ public class OrderInfo {
     public OrderInfo() {
     }
 
-    public OrderInfo(String name, String address, String email, String phone, String message, UserInfo userInfo, Boolean registered, Date creationDate) {
+    public OrderInfo(String name, String address, String email, String phone, String message, UserInfo userInfo, Date creationDate) {
         this.name = name;
         this.address = address;
         this.email = email;
         this.phone = phone;
         this.message = message;
         this.userInfo = userInfo;
-        this.registered = registered;
         this.creationDate = creationDate;
+        this.registered = true;
     }
 
-    public OrderInfo(String name, Boolean registered) {
+    public OrderInfo(String name) {
         this.name = name;
-        this.registered = registered;
+        this.address = null;
+        this.email = null;
+        this.phone = null;
+        this.message = null;
+        this.userInfo = null;
+        this.creationDate = null;
+        this.registered = false;
     }
 
     public Long getId() {

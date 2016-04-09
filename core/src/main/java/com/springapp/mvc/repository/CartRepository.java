@@ -14,4 +14,7 @@ public interface CartRepository extends JpaRepository<CartInfo, Long> {
 
     List<CartInfo> findCartsInfoByOrderInfo(OrderInfo orderInfo);
 
+    CartInfo findCartInfoByOrderInfoAndGoodInfo(OrderInfo orderInfo, GoodInfo goodInfo);
+
+    void deleteByOrderInfo(OrderInfo orderInfo);
 }

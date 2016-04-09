@@ -47,4 +47,16 @@ public class CatalogService {
         }
         return goods;
     }
+
+    @Transactional
+    public List<GoodInfo> getGoodsByCategoryIdAndBrand(Long category_id, Long brand) {
+        List<CategoryInfo> subcategories = categoryRepository.findCategoriesByParentId(category_id);
+        goods = goodRepository.findGoodsByCategory_IdAndBrand_Id(category_id, brand);
+        if (subcategories != null) {
+            for (CategoryInfo subcategory : subcategories) {
+                goods.addAll(goodRepository.findGoodsByCategory_IdAndBrand_Id(subcategory.getId(), brand));
+            }
+        }
+        return goods;
+    }
 }

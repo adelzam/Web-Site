@@ -56,4 +56,14 @@ public class FeedbackFormBean {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    @Override
+    public String toString() {
+        return "FeedbackFormBean{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", sub='" + sub + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }

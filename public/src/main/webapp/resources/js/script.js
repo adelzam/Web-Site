@@ -10,3 +10,9 @@ $(document).ready(function () {
 
     });
 });
+window.onload = function () {
+    var price = $(this).findObject('price').text();
+    var num = $(this).findObject('number').val();
+    var sum  = price*num;
+    sum = document.getElementById('mult').innerHTML
+};
