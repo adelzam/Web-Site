@@ -33,12 +33,15 @@ public class BrandInfo {
     private String bannerURL;
     public BrandInfo() {
     }
-
+    public BrandInfo(Long id) {
+        this.id = id;
+    }
     public BrandInfo(String name, String imageURL, String bannerURL) {
         this.name = name;
         this.imageURL = imageURL;
         this.bannerURL = bannerURL;
     }
+
 
     public String getBannerURL() {
         return bannerURL;

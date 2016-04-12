@@ -5,6 +5,8 @@ import com.springapp.mvc.form.FeedbackFormBean;
 import com.springapp.mvc.form.NewOrderFormBean;
 import com.springapp.mvc.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,6 +29,7 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+
 
     /**
      *
@@ -53,10 +56,11 @@ public class OrderController {
         if (bindingResult.hasErrors()) {
             return "order/newOrderPage";
         }
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         OrderInfo orderInfo = new OrderInfo(orderFormBean.getName(), orderFormBean.getAddress(),
                 orderFormBean.getEmail(), orderFormBean.getPhone(),
                 orderFormBean.getMessage(), null, new Date());
-        model.addAttribute("ordernum",orderService.createNewOrder(orderInfo, request).getId());
+        model.addAttribute("ordernum",orderService.createNewOrder(orderInfo,userDetails.getUsername(), request).getId());
         return "order/result";
     }
 }

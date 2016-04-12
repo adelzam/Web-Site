@@ -9,10 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Gataullin Kamil
- * 28.03.2016 21:01
- */
+
 public class MyUserDetail implements UserDetails {
 
     /**

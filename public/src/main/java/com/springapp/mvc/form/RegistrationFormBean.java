@@ -6,9 +6,7 @@ import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-/**
- * Created by adelzamalutdinov on 07.04.16.
- */
+
 public class RegistrationFormBean {
 
     @NotEmpty(message = "Поле обязательно для заполнения")
@@ -25,13 +23,12 @@ public class RegistrationFormBean {
     @Size(min = 3, max = 13, message = "Введите верный номер телефона")
     private String phone;
 
-    @AssertTrue(message = "Примите условия договора")
     private Boolean signIn;
 
-    @Size(min=6, max=20, message="Пароль должен быть от 6 до 20 символов")
+    @Size(min=3, max=20, message="Пароль должен быть от 3 до 20 символов")
     private String password;
 
-    @Size(min=6, max=20, message="Пароль должен быть от 6 до 20 символов")
+    @Size(min=3, max=20, message="Пароль должен быть от 3 до 20 символов")
     private String confirmPassword;
 
     public RegistrationFormBean() {

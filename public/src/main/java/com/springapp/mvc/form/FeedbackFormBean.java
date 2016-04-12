@@ -5,9 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-/**
- * Created by adelzamalutdinov on 23.03.16.
- */
+
 public class FeedbackFormBean {
     @NotEmpty(message = "Поле обязательно для заполнения")
     private String name;

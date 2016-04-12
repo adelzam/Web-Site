@@ -253,3 +253,75 @@ span {
     font-family: 'Kozuka Mincho Pro';
     font-weight: 600;
 }
+
+.button_submit {
+    width: 200pt;
+    height: 100pt;
+    font-size: 80pt;
+}
+
+.admin_page_head {
+    width: 880pt;
+    font-size: 14pt;
+    margin-left: 15pt;
+    font-weight: 600;
+    letter-spacing: normal;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.admin_page_line {
+    width: 880pt;
+    font-size: 14pt;
+    margin-left: 15pt;
+    font-weight: 300;
+    margin-top: 4pt;
+    letter-spacing: normal;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.admin_div {
+    height: 18pt;
+    float: left;
+    background-color: rgba(211, 211, 211, 0.9);
+    vertical-align: middle;
+}
+
+.admin_div2 {
+    height: 80pt;
+    float: left;
+    background-color: rgba(255, 251, 240, 0.9);
+
+}
+
+.scroll {
+    height: 260pt;
+    width: 920pt;
+    margin-left: 55pt;
+    margin-top: 5pt;
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+
+.admin_text {
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Kozuka Gothic Pro';
+    font-weight: 400;
+    margin-left: 250pt;
+}
+
+.admin-add-button {
+    text-decoration: none;
+    margin-left: 95pt;
+    margin-top: 30pt;
+}
+
+.admin-add-text {
+    font-size: 20pt;
+    vertical-align: top;
+    color: black
+}

@@ -6,9 +6,7 @@ import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-/**
- * Created by adelzamalutdinov on 25.03.16.
- */
+
 public class NewOrderFormBean {
     @NotEmpty(message = "Поле обязательно для заполнения")
     private String name;
