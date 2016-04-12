@@ -2,24 +2,34 @@ package com.springapp.mvc.common;
 
 import javax.persistence.*;
 
-/**
- * Created by adelzamalutdinov on 04.04.16.
- */
+
 @Entity
 @Table(name = "cart")
 public class CartInfo {
+    /**
+     * cart id
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    /**
+     * good id was added into the cart
+     */
     @ManyToOne
     @JoinColumn(name = "good_id")
     private GoodInfo goodInfo;
 
+    /**
+     * who added good into cart
+     */
     @ManyToOne
     @JoinColumn(name = "order_id")
     private OrderInfo orderInfo;
 
+    /**
+     * number of goods
+     */
     @Column(name = "number")
     private Integer number;
 

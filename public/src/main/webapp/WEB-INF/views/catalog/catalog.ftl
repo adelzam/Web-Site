@@ -22,9 +22,9 @@
     </div>
     <#if !brands??>
         <#if filters??>
-        <div align="center" class="good_block_in_catalog">
+        <div align="center">
             <#list filters as filter>
-                <a href="?order=${filter.name}"><div>${filter.description}</div></a>
+                <a href="?order=${filter.name}&price=null&roast=null"><div class="filters">${filter.description}</div></a>
             </#list>
         </div>
         </#if>

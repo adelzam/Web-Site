@@ -2,21 +2,32 @@ package com.springapp.mvc.common;
 
 import javax.persistence.*;
 
-/**
- * Created by adelzamalutdinov on 07.04.16.
- */
 @Entity
 @Table(name = "brand")
 public class BrandInfo {
+
+    /**
+     * id of brand
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    /**
+     * name of brand
+     */
     @Column(name = "name")
     private String name;
 
+    /**
+     * url to brand image
+     */
     @Column(name = "imageURL")
     private String imageURL;
+
+    /**
+     * banner form brand
+     */
 
     @Column(name = "bannerURL")
     private String bannerURL;

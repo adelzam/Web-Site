@@ -67,37 +67,59 @@ public class GoodInfo {
     @Column(name = "description")
     private String description;
 
+    /**
+     * rang of popularity
+     * the most popular - 1
+     * the least popular - 10
+     */
+    @Column(name = "popularity")
+    private Integer popularity;
+
+    /**
+     * roast type of coffe
+     * null for another goods
+     */
+    @Column(name = "roast")
+    private String roast;
+
     public GoodInfo() {
     }
 
     public GoodInfo(Long id) {
         this.id = id;
     }
-    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category) {
+
+    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, Integer popularity, String roast) {
         this.name = name;
         this.brand = brand;
         this.country = country;
         this.price = price;
         this.category = category;
+        this.popularity = popularity;
+        this.roast = roast;
     }
 
-    public GoodInfo(Long id, String name, CategoryInfo category, BigDecimal price) {
+    public GoodInfo(Long id, String name, CategoryInfo category, BigDecimal price, Integer popularity, String roast) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
+        this.popularity = popularity;
+        this.roast = roast;
     }
 
-    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, String imageURL) {
+    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, String imageURL, Integer popularity, String roast) {
         this.name = name;
         this.brand = brand;
         this.country = country;
         this.price = price;
         this.category = category;
         this.imageURL = imageURL;
+        this.popularity = popularity;
+        this.roast = roast;
     }
 
-    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, String imageURL, String description) {
+    public GoodInfo(String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, String imageURL, String description, Integer popularity, String roast) {
         this.name = name;
         this.brand = brand;
         this.country = country;
@@ -105,6 +127,24 @@ public class GoodInfo {
         this.category = category;
         this.imageURL = imageURL;
         this.description = description;
+        this.popularity = popularity;
+        this.roast = roast;
+    }
+
+    public String getRoast() {
+        return roast;
+    }
+
+    public void setRoast(String roast) {
+        this.roast = roast;
+    }
+
+    public Integer getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(Integer popularity) {
+        this.popularity = popularity;
     }
 
     public Long getId() {

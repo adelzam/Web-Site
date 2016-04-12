@@ -17,25 +17,47 @@ public class OrderInfo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    /**
+     * name of person who made order
+     */
     @Column(name = "name")
     private String name;
 
+    /**
+     * address where we will need order
+     */
     @Column(name = "address")
     private String address;
 
+    /**
+     * contact email info
+     */
     @Column(name = "email")
     private String email;
 
+    /**
+     * contact phone
+     */
     @Column(name = "phone")
     private String phone;
 
+    /**
+     * some information about details of order
+     */
     @Column(name = "message")
     private  String message;
 
+    /**
+     * id of registered user
+     */
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserInfo userInfo;
 
+    /**
+     * is we registered this order
+     * (have pay and another)
+     */
     @Column(name = "registered")
     private Boolean registered;
 

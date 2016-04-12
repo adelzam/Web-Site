@@ -11,13 +11,22 @@ import javax.persistence.*;
 @Table(name = "filters")
 public class FilterInfo {
 
+    /**
+     * filter id
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    /**
+     * filter name
+     */
     @Column(name = "name")
     private String name;
 
+    /**
+     * filter rendered name
+     */
 
     @Column (name = "description")
     private String description;

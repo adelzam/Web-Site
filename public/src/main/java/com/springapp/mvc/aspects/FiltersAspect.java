@@ -31,6 +31,9 @@ public class FiltersAspect {
 
     }
 
+    /**
+     * render of filters list
+     */
     @Before("includeFilterInfoMethod()")
     public void includeFilterInfo() {
         List<FilterInfo> filters = filterSevice.getAllFilters();

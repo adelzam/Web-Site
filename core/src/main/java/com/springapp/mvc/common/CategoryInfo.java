@@ -11,25 +11,25 @@ import java.util.List;
 public class CategoryInfo {
 
     /**
-     * id категории
+     * id of category
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     /**
-     * Название категории
+     * category name
      */
     @Column(name = "name", length = 120, nullable = false)
     private String name;
 
     /**
-     * Список дочерних категорий
+     * list of subcategories
      */
     @OneToMany(mappedBy = "parent")
     private List<CategoryInfo> children;
     /**
-     * Родительская категория
+     * parent category
      */
     @ManyToOne
     @JoinColumn(name = "parent_id")

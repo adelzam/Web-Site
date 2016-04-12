@@ -1,7 +1,7 @@
 package com.springapp.mvc.utils;
 
 /**
- * Created by adelzamalutdinov on 05.04.16.
+ * list of order types
  */
 public enum OrderTypes {
     BYPRICEASC, BYNAMEASC, BYBRANDASC, BYPRICEDESC, BYNAMEDESC, BYBRANDDESC

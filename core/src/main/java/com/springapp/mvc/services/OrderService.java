@@ -8,14 +8,19 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 
-/**
- * Created by adelzamalutdinov on 07.04.16.
- */
+
 @Service
 public class OrderService {
     public static final String CART = "sessionCart";
     @Autowired
     private OrderRepository orderRepository;
+
+    /**
+     *
+     * @param orderInfo
+     * @param request
+     * @return service witch put into db new order
+     */
 
     public OrderInfo createNewOrder(OrderInfo orderInfo, HttpServletRequest request) {
         OrderInfo cessionOrder = orderRepository.findOrderInfoByName(String.valueOf(request.getSession().getId()));

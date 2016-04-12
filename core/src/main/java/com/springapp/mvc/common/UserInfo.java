@@ -16,32 +16,32 @@ public class UserInfo {
     private Long id;
 
     /**
-     * ФИО пользователя
+     * Name and Last name of client
      */
     private String fio;
 
     /**
-     * Логин пользователя для входа на сайт, он же email
+     * Login (email)
      */
     private String login;
 
     /**
-     * hash пароля пользователя
+     * hash password
      */
     private String hashPassword;
 
     /**
-     * Права доступа пользователя (возможные значения 'ROLE_USER', 'ROLE_ADMIN')
+     * user's role
      */
     private String role;
 
     /**
-     * Уникальный ключ для подтверждения пользователя, отправляется по почте
+     * unique key for registration with we send to email
      */
     private String key;
 
     /**
-     * Флаг, что пользователь подтвержден и активен.
+     * iser is enable or not
      */
     private Boolean enabled;
 

@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created by adelzamalutdinov on 25.03.16.
- */
 @Controller
 @RequestMapping("/goods")
 public class GoodController {
     @Autowired
     private GoodService goodService;
 
+    /**
+     *
+     * @param id
+     * @param model
+     * @return render good's page
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String renderGood(@PathVariable("id") Long id, ModelMap model) {
         GoodInfo good = goodService.getGoodById(id);
@@ -26,6 +29,12 @@ public class GoodController {
         return "good/goodPage";
 
     }
+
+    /**
+     *
+     * @param model
+     * @return render catalog page
+     */
     @RequestMapping(method = RequestMethod.GET)
     public String renderAllGoods(ModelMap  model) {
         List<GoodInfo> goods = goodService.getAllGoods();

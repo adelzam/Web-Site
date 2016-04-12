@@ -19,18 +19,30 @@ public class FeedbackController {
     @Autowired
     private HttpServletRequest request;
 
+    /**
+     *
+     * @return page with feedback form
+     */
     @RequestMapping(method = RequestMethod.GET)
     public String renderFeedbackPage() {
         request.setAttribute(ATTR_FEEDBACK_FORM, new FeedbackFormBean());
         return "feedback/feedbackPage";
     }
 
+    /**
+     *
+     * @param feedbackFormBean
+     * @param bindingResult
+     * @return check feedback and put it in to file or db
+     * if all elements are correct else
+     * render page again to fix some information in elements
+     */
     @RequestMapping(method = RequestMethod.POST)
     public String feedbackForm(@Valid @ModelAttribute(ATTR_FEEDBACK_FORM) FeedbackFormBean feedbackFormBean, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "feedback/feedbackPage";
         }
-        // здесь должна происходить регистрация пользователя
+        // TODO put feedback into database or file
         System.out.println(feedbackFormBean);
         return "feedback/result";
     }

@@ -13,9 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by adelzamalutdinov on 05.04.16.
- */
+
 @Service
 public class FilterServiсe {
     @Autowired
@@ -30,6 +28,13 @@ public class FilterServiсe {
     @Autowired
     private BrandRepository brandRepository;
 
+    /**
+     * @param type
+     * @param category
+     * @param brand
+     * @return list of goods by category and brand order by type
+     * find all subcategories and depending on the type of the sorting return list of goods
+     */
     @Transactional
     public List<GoodInfo> orderBy(OrderTypes type, Long category, Long brand) {
         List<GoodInfo> goods = null;
@@ -67,6 +72,10 @@ public class FilterServiсe {
         return goods;
     }
 
+    /**
+     *
+     * @return list of liters for aspect
+     */
     @Transactional
     public List<FilterInfo> getAllFilters() {
         return filterRepository.findAll();

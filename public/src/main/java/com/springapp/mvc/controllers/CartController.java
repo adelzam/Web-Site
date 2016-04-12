@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by adelzamalutdinov on 24.02.16.
- */
 @Controller
 @RequestMapping("/cart")
 public class CartController {
@@ -48,9 +45,9 @@ public class CartController {
     }
 
     /**
+     *
      * @param index
-     * @return page with cart after remote some good from cart
-     * remote user's cart after some action
+     * @return render of cart page after change number of one good from cart
      */
     @RequestMapping(value = "/remote/{index}", method = {RequestMethod.GET})
     public String remoteFromCart(@PathVariable("index") Integer index) {
@@ -58,13 +55,21 @@ public class CartController {
         return "redirect:/cart";
     }
 
+    /**
+     *
+     * @param index
+     * @return render of cart page after remote one good from cart
+     */
     @RequestMapping(value = "/remotegood/{index}", method = {RequestMethod.GET})
     public String remoteOneGoodFromCart(@PathVariable("index") Integer index) {
         cartService.remoteGood(index, request);
         return "redirect:/cart";
     }
 
-
+    /**
+     * @return page with cart after remote all goods from cart
+     * remote user's cart after some action
+     */
     @RequestMapping(value = "/clear", method = {RequestMethod.GET})
     public String clearCart() {
         cartService.clearCart(request);

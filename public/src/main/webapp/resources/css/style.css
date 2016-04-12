@@ -231,3 +231,25 @@ span {
     width: 150pt;
     margin-top: 10pt;
 }
+
+.filters {
+    font-family: 'Kozuka Gothic Pro';
+    font-size: 18pt;
+    font-weight: 600;
+    width: 120pt;
+    background-color: rgba(211, 211, 211, 0.9);
+    color: darkslateblue;
+    display: inline-block;
+    margin-right: 15pt;
+    margin-bottom: 20pt;
+}
+
+.oy-oy-page {
+    background-color: rgba(255, 245, 238, 0.6);
+    margin-left: 40pt;
+    margin-right: 40pt;
+    margin-top: 40pt;
+    font-size: 30px;
+    font-family: 'Kozuka Mincho Pro';
+    font-weight: 600;
+}

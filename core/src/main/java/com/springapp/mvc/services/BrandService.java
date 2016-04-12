@@ -14,6 +14,11 @@ public class BrandService {
     @Autowired
     private BrandRepository brandRepository;
 
+    /**
+     *
+     * @param id - id of brand
+     * @return brand witch have such id
+     */
     public BrandInfo getBrandById(Long id) {
         return brandRepository.findOne(id);
     }

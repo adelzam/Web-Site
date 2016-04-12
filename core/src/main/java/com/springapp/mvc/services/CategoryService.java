@@ -5,15 +5,17 @@ import com.springapp.mvc.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by adelzamalutdinov on 08.04.16.
- */
 @Service
 public class CategoryService {
 
     @Autowired
     private CategoryRepository categoryRepository;
 
+    /**
+     *
+     * @param id
+     * @return category by id
+     */
     public CategoryInfo getCategoryInfo(Long id) {
        return categoryRepository.findOne(id);
     }

@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Date;
 
-/**
- * Created by adelzamalutdinov on 07.04.16.
- */
+
 @Controller
 @RequestMapping("/order")
 public class OrderController {
@@ -30,12 +28,25 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    /**
+     *
+     * @return page with order form
+     */
+
     @RequestMapping(method = RequestMethod.GET)
     public String renderFeedbackPage() {
         request.setAttribute(ATTR_NEWORDER_FORM, new NewOrderFormBean());
         return "order/newOrderPage";
     }
 
+    /**
+     *
+     * @param orderFormBean
+     * @param bindingResult
+     * @param request
+     * @param model
+     * @return page with results and register order if all elemnts are correct
+     */
     @RequestMapping(method = RequestMethod.POST)
     public String feedbackForm(@Valid @ModelAttribute(ATTR_NEWORDER_FORM) NewOrderFormBean orderFormBean,
                                BindingResult bindingResult, HttpServletRequest request, Model model) {

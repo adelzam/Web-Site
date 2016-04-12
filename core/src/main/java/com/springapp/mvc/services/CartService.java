@@ -34,6 +34,14 @@ public class CartService {
     @Autowired
     private GoodRepository goodRepository;
 
+    /**
+     * @param goodInfo good witch we add to cart
+     * @param request
+     * @return list of goods witch you add to cart
+     * class can update or add info of good
+     * if U have such good in cart class only increment number of goods
+     * if U don't have such good in cart class put good to cart
+     */
     @Transactional
     public List<CartInfo> addInCart(GoodInfo goodInfo, HttpServletRequest request) {
         BigDecimal sum = (BigDecimal) request.getSession().getAttribute("sum");
@@ -63,12 +71,24 @@ public class CartService {
         return cart;
     }
 
+    /**
+     * @param request
+     * @return information about void of the cart
+     */
+
     public boolean emptyCart(HttpServletRequest request) {
         List<GoodInfo> cart = (List<GoodInfo>) request.getSession().getAttribute(CART);
         if ((cart == null) || (cart.size() == 0)) return true;
         else return false;
     }
 
+    /**
+     * @param index index of good in list
+     * @param request
+     * @return updated list of goods
+     * If in cart have good with @index with number >1 class decreases nubmer
+     * If in cart have good with @index with number=0 claas delete nubmer
+     */
     @Transactional
     public List<CartInfo> remoteFromCart(Integer index, HttpServletRequest request) {
         BigDecimal sum = (BigDecimal) request.getSession().getAttribute("sum");

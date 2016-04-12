@@ -26,6 +26,13 @@ public class JPAGoodRepository implements GoodRepositoryCustom {
 
     private static final String SQL_BRAND_0_QUERY = "SELECT g FROM GoodInfo g where g.category.id in ?";
 
+    /**
+     *
+     * @param order type of order
+     * @param brand brand of good's
+     * @param category good's category
+     * @return get gooods with current category and(or) current brand in current order
+     */
     @Override
     public List<GoodInfo> getGoodsInOrder(String order, BrandInfo brand, List<Long> category) {
         CriteriaBuilder cb = em.getCriteriaBuilder();

@@ -1,6 +1,7 @@
 package com.springapp.mvc.controllers;
 
 import com.springapp.mvc.aspects.annotation.IncludeFilterInfo;
+import com.springapp.mvc.aspects.annotation.IncludeTopGoods;
 import com.springapp.mvc.common.BrandInfo;
 import com.springapp.mvc.common.GoodInfo;
 import com.springapp.mvc.services.BrandService;
@@ -67,6 +68,7 @@ public class CatalogController {
     /**
      * view of main catalog page
      */
+    @IncludeTopGoods
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
     public String mainCatalog(HttpServletRequest request) {
         request.setAttribute("message", "Главная страница каталога");
@@ -81,9 +83,11 @@ public class CatalogController {
      * @return page with list of goods in the determined order in category
      */
     @IncludeFilterInfo
-    @RequestMapping(value = "/{id}/{brand}", method = RequestMethod.GET, params = "order")
+    @RequestMapping(value = "/{id}/{brand}", method = RequestMethod.GET, params = {"order", "roast", "price"})
     public String renderCatalogByOrder(@PathVariable("id") Long id, @PathVariable("brand") Long brand,
                                        @RequestParam("order") String orderTypes,
+                                       @RequestParam("roast") String roastFilter,
+                                       @RequestParam("price") String priceFilter,
                                        Model model) {
         List<GoodInfo> goods = goodsFiltersService.orderBy(OrderTypes.valueOf(orderTypes.toUpperCase()), id, brand);
         model.addAttribute("goods", goods);
