@@ -43,7 +43,7 @@ public class GoodService {
      */
     @Transactional
     public List<GoodInfo> getAllGoods() {
-        return goodRepository.findAll();
+        return goodRepository.getAllByOrderById();
     }
 
     /**

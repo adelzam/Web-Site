@@ -12,7 +12,7 @@
             <a href="/catalog/3"><img src="../../../resources/images/Cat4.png" class="catalog_img" align="left"></a>
         </div>
         <div align="center" style="margin-left: 88pt">
-            <a href="/catalog/6"><img src="../../../resources/images/Cat1.jpg" class="catalog_img" align="left"></a>
+            <a href="/not-yet"><img src="../../../resources/images/Cat1.jpg" class="catalog_img" align="left"></a>
             <a href="/catalog/2"><img src="../../../resources/images/Cat5.png" class="catalog_img" align="left"></a>
         </div>
     </div>

@@ -4,6 +4,8 @@ import com.springapp.mvc.common.BrandInfo;
 import com.springapp.mvc.common.GoodInfo;
 import com.springapp.mvc.repository.BrandRepository;
 import com.springapp.mvc.repository.GoodRepository;
+import com.springapp.mvc.services.BrandService;
+import com.springapp.mvc.services.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,26 +21,26 @@ import java.util.List;
 public class AdminController {
 
     @Autowired
-    private GoodRepository goodRepository;
+    private GoodService goodService;
     @Autowired
-    private BrandRepository brandRepository;
+    private BrandService brandService;
 
     @RequestMapping(method = {RequestMethod.GET})
     public String renderAdminPage(Model model) {
-        model.addAttribute("goods", (List<GoodInfo>) goodRepository.findAll());
-        model.addAttribute("brands", (List<BrandInfo>) brandRepository.findAll());
+        model.addAttribute("goods", (List<GoodInfo>) goodService.getAllGoods());
+        model.addAttribute("brands", (List<BrandInfo>) brandService.findAll());
         return "admin/admin-page";
     }
 
     @RequestMapping(value = "/deletegood/{id}", method = {RequestMethod.GET})
     public String deleteGoodFromDB(@PathVariable("id") Long id){
-        goodRepository.delete(new GoodInfo(id));
+        goodService.deleteGood(id);
         return "redirect:/admin";
     }
 
     @RequestMapping(value = "/deletebrand/{id}", method = {RequestMethod.GET})
     public String deleteBrandFromDB(@PathVariable("id") Long id){
-        brandRepository.delete(new BrandInfo(id));
+        brandService.delete(id);
         return "redirect:/admin";
     }
 

@@ -23,4 +23,6 @@ public interface GoodRepository extends JpaRepository<GoodInfo, Long> {
 
     List<GoodInfo> findTop6ByOrderByPopularityAsc();
 
+    List<GoodInfo> getAllByOrderById();
+
 }

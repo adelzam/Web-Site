@@ -130,6 +130,19 @@ public class GoodInfo {
         this.popularity = popularity;
         this.roast = roast;
     }
+    public GoodInfo(Long id, String name, BrandInfo brand, String country, BigDecimal price, CategoryInfo category, String imageURL, String description, Integer popularity, String roast) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+        this.country = country;
+        this.price = price;
+        this.category = category;
+        this.imageURL = imageURL;
+        this.description = description;
+        this.popularity = popularity;
+        this.roast = roast;
+    }
+
 
     public String getRoast() {
         return roast;

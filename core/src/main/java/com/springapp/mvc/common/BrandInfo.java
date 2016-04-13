@@ -41,6 +41,13 @@ public class BrandInfo {
         this.imageURL = imageURL;
         this.bannerURL = bannerURL;
     }
+    public BrandInfo(Long id, String name, String imageURL, String bannerURL) {
+        this.id = id;
+        this.name = name;
+        this.imageURL = imageURL;
+        this.bannerURL = bannerURL;
+    }
+
 
 
     public String getBannerURL() {
@@ -74,4 +81,19 @@ public class BrandInfo {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        BrandInfo brandInfo = (BrandInfo) o;
+
+        if (id != null ? !id.equals(brandInfo.id) : brandInfo.id != null) return false;
+        if (name != null ? !name.equals(brandInfo.name) : brandInfo.name != null) return false;
+        if (imageURL != null ? !imageURL.equals(brandInfo.imageURL) : brandInfo.imageURL != null) return false;
+        return bannerURL != null ? bannerURL.equals(brandInfo.bannerURL) : brandInfo.bannerURL == null;
+
+    }
+
 }
